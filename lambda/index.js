@@ -15,9 +15,6 @@ const LaunchRequestHandler = {
     async handle(handlerInput) {
         const speakOutput = 'Bem vindo à leitura de provas. Diga ler prova para iniciar. Boa sorte!';
         
-        handlerInput.attributesManager.setPersistentAttributes([])
-        await handlerInput.attributesManager.savePersistentAttributes()
-        
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
