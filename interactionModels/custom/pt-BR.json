@@ -55,6 +55,24 @@
           "prompts": {
             "confirmation": "Confirm.Intent.297504597077"
           }
+        },
+        {
+          "slots": [
+            {
+              "name": "codigo",
+              "elicitationRequired": true,
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.886557347440.489389226475"
+              }
+            }
+          ],
+          "name": "InserirCodigoIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.886557347440"
+          }
         }
       ],
       "delegationStrategy": "ALWAYS"
@@ -145,6 +163,47 @@
             "próxima questão",
             "próxima"
           ]
+        },
+        {
+          "slots": [],
+          "name": "HoraIntent",
+          "samples": [
+            "hora"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "QuestaoAnteriorIntent",
+          "samples": [
+            "anterior",
+            "questão anterior"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "questao",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "QuestaoEspecificaIntent",
+          "samples": [
+            "questão {questao}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "codigo",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "name": "InserirCodigoIntent",
+          "samples": [
+            "colocar código",
+            "código",
+            "inserir código"
+          ]
         }
       ],
       "types": [],
@@ -204,6 +263,24 @@
           }
         ],
         "id": "Elicit.Slot.649528997209.1045521869053"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "qual o código a ser inserido?"
+          }
+        ],
+        "id": "Elicit.Slot.886557347440.489389226475"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "deseja confirmar a inserção do código {codigo} ?"
+          }
+        ],
+        "id": "Confirm.Intent.886557347440"
       }
     ]
   }
